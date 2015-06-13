@@ -19,25 +19,12 @@ data = fp.read()
 data = sorted(data.split(','))
 
 count = 0
-string = 'SKY'
-sum = 0
-for i in range(string.__len__()):
-	sum+= ord(string[i]) - 64
-print sum
+
 for string in data:
 	newstring = string[1:-1]
 	sum = 0
-	for i in range(string.__len__()):
-		print ord(string[i])
-		sum += ord(string[i])-64
-	print sum
+	for i in range(newstring.__len__()):
+		sum += ord(newstring[i])-64
 	if is_triangle(sum):
 		count+=1
-	break
 print count
-# 	break
-
-# print count
-# numbers = [1,2,3,4,5,6,7,8,9,10]
-# for number in numbers:
-# 	print str(number) + ' : ' + str(is_triangle(number))

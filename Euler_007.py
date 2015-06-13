@@ -16,6 +16,5 @@ while(True):
             print n
             break
         else:
-            print n
             i += 1
     n += 1
