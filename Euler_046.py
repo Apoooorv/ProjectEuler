@@ -11,14 +11,16 @@ def is_prime(n):
 	return True	
 
 flag = False
-for i in xrange(3,10000000,2):
+for i in xrange(3,10000,2):
+	flag = False
 	if not is_prime(i):
-		for j in range(1,i,2):
+		for j in range(1,i):
 			if is_prime(j):
 				number = math.sqrt((i-j)/2)
 				if number.is_integer():
 					flag = True
 					break
+
 		if not flag:
 			print i
-			break
+			exit()
