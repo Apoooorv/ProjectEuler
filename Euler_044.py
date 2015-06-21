@@ -8,13 +8,12 @@ def equation(n):
 		return True
 	return False
 
-lowest = 48
-for i in xrange(1000000):
+lowest = 10000000
+for i in xrange(10000000):
 	if equation(i):
-		for j in xrange(i+1,1000000):
+		for j in xrange(i+1,10000000):
 			if equation(j):
 				if equation(i+j) and equation(j-i):
-					print i,j
 					if j-i < lowest:
 						lowest = j-i
 
