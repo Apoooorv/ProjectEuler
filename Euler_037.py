@@ -26,7 +26,7 @@ def is_truncable(number):
 
 count = 0
 truncableList = []
-for i in xrange(10000,100000000):
+for i in xrange(10,1000000):
 	if is_truncable(i):
 		count+=1
 		truncableList.append(i)
