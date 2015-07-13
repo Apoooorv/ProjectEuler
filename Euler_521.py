@@ -17,8 +17,11 @@ def smpf(n):
 	return 0
 
 sum = 0
-for i in xrange(1,10**12+1):
-	sum+=smpf(i)
+for i in xrange(1, 10**12):
+	print i
+# for i in xrange(5*(10**11),10**12+1,2):
+# 	print i
+# 	sum+=(smpf(i)+2)
 
-print sum
-print sum % (10**9)
+# print 'sum'
+# print sum
