@@ -61,16 +61,12 @@ def getstring(number):
 			continue
 		if value == 4 and index != len(numberarray)-1:
 			string = string + stringarray[index] + stringarray[index+1]
-		# elif value == 9:
-		# 	string = string + stringarray[index] + stringarray[index+2]
 		else:
 			for i in xrange(value):
 				string = string + stringarray[index]
 		tempnumber-=value*numberarray[index]
 	return string
 
-print getnumber('XIX')
-print getstring(499)
 saving = 0
 arr = []
 for number in data:
@@ -78,6 +74,6 @@ for number in data:
 	j = getstring(i)
 	save = len(number) - len(j)
 	saving += save
-	print number, i, j, save
+	# print number, i, j, save
 
 print saving
