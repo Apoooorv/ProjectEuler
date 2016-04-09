@@ -7,26 +7,22 @@ fp = open(os.path.join(__location__,'Euler_059_data.txt'), 'r')
 data = fp.read()
 data = data.split(',')
 
-flag = False
-values = []
-
-EnKeyi = EnKeyj = EnKeyk = 97
-i = 0
-while i <= data.__len__():
-	print EnKeyi
-	if EnKeyi > 122:
-		print 'Not found'
-		break
-	xor = EnKeyi ^ int(data[i])
-	print data[i],int(data[i]),xor
-	# print data[i],int(data[i]),EnKeyi,xor
-	if (xor>122) or (xor<65):
-		print values
-		i = 0
-		values = []
-		EnKeyi+=1
-	else:
-		values.append(xor)
+def getKey(index):
+	i = index
+	EnKey = 97
+	while i < data.__len__():
+		xor = int(data[i])^EnKey
+		if xor not in xrange(32,91) and xor not in xrange(97,123):
+			i=index
+			EnKey+=1
+			continue
 		i+=3
+	return EnKey
 
-print values
+array = [getKey(0), getKey(1), getKey(2)]
+
+sum = 0
+for i in xrange(data.__len__()):
+	sum += (int(data[i])^array[i%3])
+
+print sum
